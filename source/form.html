@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Учеьный проект HTML Academy – Sedona">
+  <link rel="preload" href="fonts/ptsans.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/ptsansbold.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="js/menu.js" as="script" media="(max-width: 767px)">
+  <link rel="stylesheet" href="css/style.min.css">
+  <title>HTML Academy: Седона</title>
+</head>
+
+<body class="main-container">
+
+  <div style="display:none">
+    <include src="build/img/sprite.svg"></include>
+  </div>
+
+  <nav class="main-nav">
+    <ul class="main-nav__site-list list-style-reset">
+      <li class="main-nav__item">
+        <a class="main-nav__link" href="index.html">
+          Главная
+        </a>
+      </li>
+      <li class="main-nav__item">
+        <a class="main-nav__link" href="photo.html">
+          Фото и видео
+        </a>
+      </li>
+      <li class="main-nav__item">
+        <a class="main-nav__link">
+          Форма отзыва
+        </a>
+      </li>
+      <li class="main-nav__item">
+        <a class="main-nav__link" href="https://htmlacademy.ru/intensive/adaptive" target="_blank"
+          rel="noopener noreferrer">
+          HTML Academy
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+  <header class="main-header">
+    <a class="main-header__logo-link" href="index.html" title="Седона">
+      <picture>
+        <source media="(min-width: 1200px)" srcset="img/logo-sedona-desktop.svg">
+        <source media="(min-width: 768px)" srcset="img/logo-sedona-tablet.svg">
+        <img src="img/logo-sedona-mobile.svg" alt="Логотип Седоны">
+      </picture>
+    </a>
+    <button class="main-header__menu-toggle" type="button">Закрыть меню</button>
+  </header>
+
+  <main>
+    <section class="intro  intro--inner">
+      <div class="intro__header intro__header--inner">
+        <img class="intro__slogan intro__slogan--inner" src="img/text-sedona.svg" width="229" height="39"
+          alt="Добро пожаловать в Седону">
+      </div>
+      <div class="intro__main intro__main--inner intro__main--form">
+        <h1 class="intro__title intro__title--inner">Оставьте свой отзыв</h1>
+        <span class="intro__description intro__description--inner">Помогите нашим отелям стать лучше! оставьте отзыв о
+          них, а также о посещенных вами достопримечательностях</span>
+      </div>
+    </section>
+
+    <form class="rewiev-form" action="https://echo.htmlacademy.ru" method="post">
+
+      <fieldset class="rewiev-form__field rewiev-form__field--name name-field">
+        <legend class="name-field__title">Представьтесь:</legend>
+        <label class="name-field__label">
+          <span class="name-field__caption name-field__caption--first">Имя*:</span>
+          <input class="name-field__input name-field__input--first" name="first-name" type="text" size="5"
+            placeholder="Петр" required>
+        </label>
+        <label class="name-field__label">
+          <span class="name-field__caption name-field__caption--last">Фамилия*:</span>
+          <input class="name-field__input name-field__input--last" name="last-name" type="text" size="5"
+            placeholder="Иванов" required>
+        </label>
+        <label class="name-field__label">
+          <span class="name-field__caption name-field__caption--second">Отчество:</span>
+          <input class="name-field__input" name="second-name" type="text" size="5" placeholder="Александрович">
+        </label>
+      </fieldset>
+
+      <fieldset class="rewiev-form__field rewiev-form__field--contacts contacts-field">
+        <legend class="contacts-field__title form-fields-title">Контактная информация:</legend>
+        <ul class="contacts-field__list list-style-reset">
+          <li class="contacts-field__item contacts-field__item--phone">
+            <label class="contacts-field__label">
+              <span class="contacts-field__caption contacts-field__caption--phone"><span
+                  class="contacts-field__hidden-word">Контактный</span> телефон*:</span>
+              <span class="contacts-field__input-container">
+                <input class="contacts-field__input contacts-field__input--phone" name="phone-number" type="tel"
+                  size="5" pattern="(\+?\d[- .]*){7,13}" placeholder="Введите телефон" required>
+                <span class="contacts-field__input-icon contacts-field__input-icon--phone"></span>
+              </span>
+            </label>
+          </li>
+          <li class="contacts-field__item contacts-field__item--email">
+            <label class="contacts-field__label">
+              <span class="contacts-field__caption contacts-field__caption--email">Электронная почта*:</span>
+              <span class="contacts-field__input-container">
+                <input class="contacts-field__input contacts-field__input--email" name="email-address" type="email"
+                  size="5" placeholder="Введите e-mail" required>
+                <span class="contacts-field__input-icon contacts-field__input-icon--email"></span>
+              </span>
+            </label>
+          </li>
+        </ul>
+      </fieldset>
+
+      <fieldset class="rewiev-form__field rewiev-form__field--impressions impressions-field">
+        <legend class="impressions-field__title">Ваше общее впечатление:</legend>
+        <label class="impressions-field__label">
+          <input class="visually-hidden" name="impression" value="positive" type="radio" checked>
+          <span class="impressions-field__custom-radio"></span>
+          <span class="impressions-field__caption">Скорее положительное</span>
+        </label>
+        <label class="impressions-field__label">
+          <input class="visually-hidden" name="impression" value="negative" type="radio">
+          <span class="impressions-field__custom-radio"></span>
+          <span class="impressions-field__caption">Скорее отрицательное</span>
+        </label>
+        <label class="impressions-field__label">
+          <input class="visually-hidden" name="impression" value="hard" type="radio">
+          <span class="impressions-field__custom-radio"></span>
+          <span class="impressions-field__caption">Затрудняюсь ответить</span>
+        </label>
+      </fieldset>
+
+      <fieldset class="rewiev-form__field rewiev-form__field--places places-field">
+        <legend class="places-field__title">Посещенные достопримечательности:</legend>
+        <ul class="places-field__list list-style-reset">
+          <li class="places-field__item">
+            <label class="places-field__label">
+              <input class="visually-hidden" name="visited" value="devils-bridge" type="checkbox" checked>
+              <span class="places-field__custom-box"></span>
+              <span class="places-field__caption">Мост Дьявола</span>
+            </label>
+          </li>
+          <li class="places-field__item">
+            <label class="places-field__label">
+              <input class="visually-hidden" name="visited" value="bell-mountain" type="checkbox" checked>
+              <span class="places-field__custom-box"></span>
+              <span class="places-field__caption">Гора-Колокол</span>
+            </label>
+          </li>
+          <li class="places-field__item">
+            <label class="places-field__label">
+              <input class="visually-hidden" name="visited" value="slide-park" type="checkbox" checked>
+              <span class="places-field__custom-box"></span>
+              <span class="places-field__caption">Слайд-парк</span>
+            </label>
+          </li>
+          <li class="places-field__item">
+            <label class="places-field__label">
+              <input class="visually-hidden" name="visited" value="red-rocks" type="checkbox">
+              <span class="places-field__custom-box"></span>
+              <span class="places-field__caption">Красные скалы</span>
+            </label>
+          </li>
+        </ul>
+      </fieldset>
+
+      <fieldset class="rewiev-form__field rewiev-form__field--emotions emotions-field">
+        <legend class="emotions-field__title"><label for="emotions">Опишите свои эмоции:</label></legend>
+        <textarea class="emotions-field__text" id="emotions" name="emotions" cols="30" rows="5"
+          placeholder="Опишите подробно все свои восторги"></textarea>
+      </fieldset>
+
+      <footer class="rewiev-form__footer">
+        <button class="rewiev-form__submit-btn common-btn" type="submit">Отправить отзыв</button>
+        <small class="rewiev-form__footnote">* – обязательные поля</small>
+      </footer>
+    </form>
+  </main>
+
+  <footer class="main-footer">
+    <b class="main-footer__hashtag">#visitSEDONA</b>
+    <ul class="main-footer__socials list-style-reset">
+      <li class="main-footer__socials-item">
+        <a class="main-footer__socials-link main-footer__socials-link--tw" href="#">Подписывайтесь на нас в Twitter</a>
+      </li>
+      <li class="main-footer__socials-item">
+        <a class="main-footer__socials-link main-footer__socials-link--fb" href="#">Добавляйтесь в наш Facebook</a>
+      </li>
+      <li class="main-footer__socials-item">
+        <a class="main-footer__socials-link main-footer__socials-link--yt" href="#">Смотрите нас на YouTube</a>
+      </li>
+    </ul>
+    <div class="main-footer__copyright">
+      <a class="main-footer__copyright-link" href="https://htmlacademy.ru/intensive/adaptive" target="_blank"
+        rel="noopener noreferrer" title="HTML Academy">
+        Разработано
+        <svg width="27" height="34.2">
+          <use xlink:href="#symbol-htmlacademy"></use>
+        </svg>
+      </a>
+    </div>
+  </footer>
+
+  <div class="popup-failure popup-failure--closed">
+    <div class="popup-failure__window">
+      <b class="popup-failure__title">
+        Что-то пошло не так!
+      </b>
+      <p class="popup-failure__description">
+        Проверьте поля, выделенные красным, скорее всего вы забыли их заполнить
+      </p>
+      <button class="popup-failure__close-btn common-btn" type="button"
+        aria-label="Закрыть всплывающее окно">Ok</button>
+    </div>
+  </div>
+
+  <div class="popup-success popup-success--closed">
+    <div class="popup-success__window">
+      <div class="popup-success__main">
+        <b class="popup-success__title">
+          Ваш отзыв отправлен!
+        </b>
+        <p class="popup-success__description">
+          Спасибо за ваше участие, ваш отзыв уже поступил к нам.<br>В ближайшее время мы опубликуем его на сайте.
+        </p>
+      </div>
+      <footer class="popup-success__footer">
+        <button class="popup-success__close-btn common-btn" type="button" aria-label="Закрыть всплывающее окно">Закрыть
+          окно</button>
+      </footer>
+    </div>
+  </div>
+
+  <script src="js/menu.js"></script>
+  <script src="js/popup.js"></script>
+</body>
+
+</html>

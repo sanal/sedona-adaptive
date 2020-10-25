@@ -1,0 +1,158 @@
+.key-feature {
+  display: flex;
+  flex-direction: column;
+
+  &::after {
+    content: "";
+
+    display: block;
+    width: 100%;
+    height: 260px;
+
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  &--city::after {
+    background-color: #b28f71;
+    background-image: url("../img/main-city-mobile@1x.jpg");
+
+    @media (min-resolution: @retina-dpi), (min-resolution: @retina-dppx) {
+      background-image: url("../img/main-city-mobile@2x.jpg");
+    }
+  }
+
+  &--bridge::after {
+    background-color: #9c796e;
+    background-image: url("../img/main-bridge-mobile@1x.jpg");
+
+    @media (min-resolution: @retina-dpi), (min-resolution: @retina-dppx) {
+      background-image: url("../img/main-bridge-mobile@2x.jpg");
+    }
+  }
+}
+
+.key-feature__card {
+  padding: 39px 20px;
+
+  font-size: 14px;
+  line-height: 26px;
+  color: #ffffff;
+  text-align: center;
+  text-transform: uppercase;
+
+  background-color: #81b3d2;
+
+  &--first {
+    padding: 40px 20px;
+  }
+}
+
+.key-feature__title {
+  margin: 0;
+  margin-bottom: 6px;
+
+  font-size: 18px;
+}
+
+.key-feature__description {
+  margin: 0;
+  margin-top: 13px;
+
+  line-height: 21px;
+
+  br {
+    display: none;
+  }
+}
+
+@media (min-width: @tablet-width) {
+  .key-feature {
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    &::after {
+      width: 512px;
+      height: auto;
+      min-height: 256px;
+    }
+
+    &--city::after {
+      background-image: url("../img/main-city-tablet@1x.jpg");
+
+      @media (min-resolution: @retina-dpi), (min-resolution: @retina-dppx) {
+        background-image: url("../img/main-city-tablet@2x.jpg");
+      }
+    }
+
+    &--bridge::after {
+      order: -1;
+
+      background-image: url("../img/main-bridge-tablet@1x.jpg");
+
+      @media (min-resolution: @retina-dpi), (min-resolution: @retina-dppx) {
+        background-image: url("../img/main-bridge-tablet@2x.jpg");
+      }
+    }
+  }
+
+  .key-feature__card {
+    width: 256px;
+    padding: 45px 45px 40px;
+    box-sizing: border-box;
+  }
+
+  .key-feature__title {
+    margin-bottom: 7px;
+
+    font-size: 21px;
+  }
+
+  .key-feature__description {
+    margin-top: 19px;
+  }
+}
+
+@media (min-width: @desktop-width) {
+  .key-feature {
+    &::after {
+      width: 800px;
+    }
+
+    &--city::after {
+      background-image: url("../img/main-city-desktop@1x.jpg");
+
+      @media (min-resolution: @retina-dpi), (min-resolution: @retina-dppx) {
+        background-image: url("../img/main-city-desktop@2x.jpg");
+      }
+    }
+
+    &--bridge::after {
+      order: -1;
+
+      background-image: url("../img/main-bridge-desktop@1x.jpg");
+      background-position: center -76px;
+
+      @media (min-resolution: @retina-dpi), (min-resolution: @retina-dppx) {
+        background-image: url("../img/main-bridge-desktop@2x.jpg");
+      }
+    }
+  }
+
+  .key-feature__card {
+    width: 400px;
+    padding: 52px 60px;
+  }
+
+  .key-feature__title {
+    margin: 0 35px;
+    margin-bottom: 7px;
+  }
+
+  .key-feature__description {
+    br {
+      display: inline;
+    }
+  }
+}

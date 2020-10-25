@@ -1,0 +1,189 @@
+.rewiev-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 37px;
+  box-sizing: border-box;
+
+  background-color: #ffffff;
+}
+
+.rewiev-form__field {
+  margin-top: 18px;
+  padding: 0 20px;
+
+  border-bottom: 1px solid #e5e5e5;
+
+  &:last-of-type {
+    margin-bottom: 41px;
+
+    border-bottom: none;
+  }
+
+  &--name {
+    margin: 0;
+    padding-bottom: 5px;
+  }
+
+  &--contacts {
+    margin: 0;
+    padding-bottom: 16px;
+  }
+
+  &--impressions {
+    margin: 0;
+    padding-bottom: 14px;
+  }
+
+  &--places {
+    margin: 0;
+    padding-bottom: 1px;
+  }
+
+  &--emotions {
+    margin: 0;
+    padding-bottom: 10px;
+  }
+}
+
+.rewiev-form__footer {
+  padding: 0 20px;
+}
+
+.rewiev-form__submit-btn {
+  width: 100%;
+  box-sizing: border-box;
+
+  text-transform: uppercase;
+}
+
+.rewiev-form__footnote {
+  display: none;
+}
+
+@media (min-width: @tablet-width) {
+  .rewiev-form {
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 7px 60px 61px;
+  }
+
+  .rewiev-form__field {
+    margin-top: 0;
+
+    width: 648px;
+    box-sizing: border-box;
+    border: none;
+
+    &--name {
+      width: 324px;
+      padding: 0;
+      padding-left: 58px;
+    }
+
+    &--contacts {
+      margin-top: 70px;
+      margin-bottom: 30px;
+      padding: 0;
+    }
+
+    &--impressions {
+      position: relative;
+
+      width: 324px;
+      order: -1;
+      padding: 0;
+      padding-right: 45px;
+
+      &::before {
+        content: "";
+
+        position: absolute;
+        right: 0;
+        bottom: 0;
+
+        display: block;
+        width: 1px;
+        height: 292px;
+
+        background-color: #e5e5e5;
+      }
+    }
+
+    &--places {
+      padding: 0;
+    }
+
+    &--emotions {
+      margin-top: 36px;
+      padding: 0;
+    }
+
+    &:last-of-type {
+      margin-bottom: 58px;
+    }
+  }
+
+  .rewiev-form__footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0;
+
+    border: none;
+  }
+
+  .rewiev-form__submit-btn {
+    width: 324px;
+    margin: 0;
+    padding-right: 27px;
+  }
+
+  .rewiev-form__footnote {
+    display: inline;
+    padding-top: 3px;
+
+    font-size: 14px;
+    line-height: 26px;
+    color: #333333;
+    text-transform: uppercase;
+  }
+}
+
+@media (min-width: @desktop-width) {
+  .rewiev-form {
+    padding: 8px 120px 66px;
+  }
+
+  .rewiev-form__field {
+    width: 960px;
+
+    &--name {
+      width: 480px;
+      padding-left: 80px;
+    }
+
+    &--contacts {
+      margin-top: 68px;
+    }
+
+    &--impressions {
+      width: 480px;
+      padding-left: 4px;
+
+      &::before {
+        right: -1px;
+      }
+    }
+
+    &--emotions {
+      margin-top: 34px;
+    }
+  }
+
+  .rewiev-form__submit-btn {
+    width: 480px;
+    padding-right: 16px;
+  }
+}

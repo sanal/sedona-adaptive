@@ -1,0 +1,154 @@
+.extra-features {
+  display: flex;
+  flex-direction: column;
+  padding: 22px 20px;
+}
+
+.extra-features__card {
+  position: relative;
+
+  padding-top: 13px;
+  padding-bottom: 15px;
+  padding-left: 50px;
+
+  &::before {
+    content: "";
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    display: block;
+    width: 40px;
+    height: 40px;
+
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  &--house::before {
+    top: 4px;
+    left: 1px;
+
+    width: 39px;
+    height: 37px;
+
+    background-image: url("../img/icon-house.svg");
+  }
+
+  &--gift::before {
+    top: 2px;
+    left: 5px;
+
+    width: 32px;
+    height: 38px;
+
+    background-image: url("../img/icon-gift.svg");
+  }
+
+  &--food::before {
+    top: 8px;
+    left: -3px;
+
+    width: 40px;
+    height: 35px;
+
+    background-image: url("../img/icon-burger.svg");
+  }
+}
+
+.extra-features__title {
+  margin: 0;
+  margin-bottom: 14px;
+
+  font-size: 18px;
+  line-height: 26px;
+  text-transform: uppercase;
+}
+
+.extra-features__description {
+  margin: 0;
+
+  font-size: 14px;
+  line-height: 21px;
+  color: #333333;
+  text-transform: uppercase;
+
+  br {
+    display: none;
+  }
+}
+
+@media (min-width: @tablet-width) {
+  .extra-features {
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 0;
+  }
+
+  .extra-features__card {
+    width: 256px;
+    padding: 45px;
+    padding-bottom: 61px;
+    box-sizing: border-box;
+
+    &--house {
+      order: 1;
+    }
+
+    &--gift {
+      order: 3;
+    }
+
+    &--food {
+      order: 2;
+    }
+
+    &::before {
+      position: static;
+
+      margin: 15px auto 25px;
+    }
+
+    &--house::before {
+      width: 75px;
+      height: 72px;
+      margin: 15px auto 27px;
+    }
+
+    &--gift::before {
+      width: 64px;
+      height: 75px;
+      margin: 12px auto 27px;
+    }
+
+    &--food::before {
+      width: 77px;
+      height: 68px;
+      margin: 18px auto 28px;
+    }
+  }
+
+  .extra-features__title {
+    margin-bottom: 21px;
+
+    font-size: 21px;
+    text-align: center;
+  }
+
+  .extra-features__description {
+    text-align: center;
+
+    br {
+      display: inline;
+    }
+  }
+}
+
+@media (min-width: @desktop-width) {
+  .extra-features__card {
+    width: 400px;
+    padding-bottom: 82px;
+  }
+}

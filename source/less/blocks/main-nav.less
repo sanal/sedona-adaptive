@@ -1,0 +1,125 @@
+.main-nav {
+  &--hide {
+    height: 0;
+    overflow: hidden;
+  }
+}
+
+.main-nav__site-list {
+  font-size: 18px;
+  line-height: 40px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.main-nav__item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 7.5px 20px;
+
+  color: #ffffff;
+
+  background-color: #81b3d2;
+
+  border-bottom: 1px solid hsla(#010101, 0.2);
+  box-shadow: inset 0 1px 0 0 hsla(#ffffff, 0.2);
+
+  &:first-child {
+    box-shadow: none;
+  }
+
+  &:last-child {
+    border-bottom: none;
+  }
+
+  &:hover {
+    background-color: #669ec0;
+  }
+
+  &:active {
+    background-color: #5496bd;
+  }
+}
+
+.main-nav__link {
+  color: #ffffff;
+  text-decoration: none;
+
+  &:active {
+    color: hsla(#ffffff, 0.3);
+  }
+}
+
+@media (min-width: @tablet-width) {
+  .main-nav {
+    &--hide {
+      height: auto;
+      overflow: initial;
+    }
+  }
+
+  .main-nav__site-list {
+    display: flex;
+    flex-wrap: wrap;
+
+    font-size: 14px;
+    line-height: 26px;
+  }
+
+  .main-nav__item {
+    width: 153px;
+    /* IE воспринимает flex-basis игнорируя {box-sizing: border-box} */
+    padding: 15px;
+    box-sizing: border-box;
+
+    background: none;
+
+    border: none;
+    box-shadow: none;
+
+    &:hover {
+      background: none;
+    }
+
+    &:nth-child(4n-1) {
+      margin-left: 156px;
+    }
+  }
+
+  .main-nav__link {
+    color: #000000;
+
+    &:hover {
+      color: #81b3d2;
+    }
+
+    &:active {
+      color: hsla(#000000, 0.3);
+    }
+
+    &:not([href]) {
+      color: #766357;
+
+      cursor: default;
+
+      &:hover {
+        color: #604e43;
+      }
+
+      &:active {
+        color: hsla(#766357, 0.3);
+      }
+    }
+  }
+}
+
+@media (min-width: @desktop-width) {
+  .main-nav__item {
+    width: 239px;
+
+    &:nth-child(4n-1) {
+      margin-left: 244px;
+    }
+  }
+}
